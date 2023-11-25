@@ -26,11 +26,14 @@ while s != '.':
     
 f.close()
 
+# for i in range(len(result)):
+#     print(result[i])
+
 dest = 'res.txt'
 
 f = open(dest, 'w')
 i = 0
-while i < len(result) - 1:
+while i < len(result):
     f.write(result[i] + '\n')
     i+=1
     
