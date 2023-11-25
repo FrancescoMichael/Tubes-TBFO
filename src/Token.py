@@ -5,7 +5,7 @@ CT = ""
 
 def readhtmlFile(path):
     try:
-        with open(path, "rt") as file:
+        with open(path, "rt", encoding="utf8") as file:
             str = ""
             line = file.readline()
             while(line):
@@ -13,8 +13,6 @@ def readhtmlFile(path):
                 line = file.readline()
         file.close()
         return str
-    except FileNotFoundError:
-        print("HTML file is not found")
     except Exception as e:
         print(f"Unexpected error while reading HTML file - {e}")
     

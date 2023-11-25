@@ -1,9 +1,0 @@
-(_Qbody, >, _button) = {(_Qbody, _insbutton)}
-(_Qbody, id, _button) = {(_Qbody, _eq_quotation_anyText_quotation_button)}
-(_Qbody, class, _button) = {(_Qbody, _eq_quotation_anyText_quotation_button)}
-(_Qbody, style, _button) = {(_Qbody, _eq_quotation_anyText_quotation_button)}
-(_Qbody, type, _button) = {(_Qbody, _eq_quotation_subresbut_quotation_button)}
-(_Qbody, submit, _subresbut) = {(_Qbody, eps)}
-(_Qbody, reset, _subresbut) = {(_Qbody, eps)}
-(_Qbody, button, _subresbut) = {(_Qbody, eps)}
-.
