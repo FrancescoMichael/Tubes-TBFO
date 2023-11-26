@@ -33,4 +33,5 @@ if __name__ == "__main__":
         print("HTML file is not found")
     
     states, terminal, stackSymbol, startState, startStack, acceptby, rules = Rules.readrulesFile(rulesPath)
-    Token.startTokenize(htmlPath, terminal)
+    TokenList = Token.startTokenize(htmlPath)
+    print(TokenList)
