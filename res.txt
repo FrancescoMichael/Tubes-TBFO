@@ -85,6 +85,7 @@ _Qbody <!-- _insbody _Qbody _comment_insbody
 _Qbody <link _insbody _Qbody _link_insbody
 _Qbody <script _insbody _Qbody _script_insbody
 _Qbody <h1 _insbody _Qbody _h1_insbody
+_Qbody alt _imgTrue _Qbody _eq_quotation_anyText_quotation_imgTrue
 _Qbody <h2 _insbody _Qbody _h2_insbody
 _Qbody <h3 _insbody _Qbody _h3_insbody
 _Qbody <h4 _insbody _Qbody _h4_insbody
@@ -260,6 +261,7 @@ _Qbody id _form _Qbody _eq_quotation_anyText_quotation_form
 _Qbody style _form _Qbody _eq_quotation_anyText_quotation_form
 _Qbody action _form _Qbody _eq_quotation_anyText_quotation_form
 _Qbody method _form _Qbody _eq_quotation_getpost_quotation_form
+_Qbody <form _insdiv _Qbody _form_insdiv
 _Qbody GET _getpost _Qbody eps
 _Qbody POST _getpost _Qbody eps
 _Qbody anyText _insform _Qbody _insform
