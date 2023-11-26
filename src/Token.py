@@ -42,7 +42,7 @@ def convertAnyText(string : str):
                     j += 1
                 if (j < len(string)):
                     i = j + 1
-                    j = i
+                    j = i - 1
                     whitespaceOnly = True
                 while (j < len(string) - 1):
                     j += 1
@@ -105,13 +105,15 @@ def parseToken(parsed):
     for p in parsed:
         i = 0
         j = len(p)
-        while (i != len(p)):
+        while (i != len(p) and j >= i):
             if (T.searchToken(p[i:j])):
                 tokenList.append(p[i:j])
                 i = j
                 j = len(p)
             else:
                 j -= 1
+        if (j < i):
+            tokenList.append(p)
     return tokenList
 
 def startTokenize(path):
@@ -120,4 +122,5 @@ def startTokenize(path):
     htmlParsed = parseString(htmlAnyText)
     createTrie()
     tokenList = parseToken(htmlParsed)
+    print(tokenList)
     return tokenList
