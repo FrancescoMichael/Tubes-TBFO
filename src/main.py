@@ -2,6 +2,7 @@ import os
 import Rules
 import sys
 import Token
+import Trie
 
 # python3 src/main.py PDA/test.txt "test/inputAcc.html"
 
@@ -15,7 +16,7 @@ def findPath(startDir, relativePath):
 
 
 if __name__ == "__main__":
-    states, terminal, stackSymbol, startState, startStack, acceptingState, acceptby, rules = None, None, None, None, None, None, None, None
+    states, terminal, stackSymbol, startState, startStack, acceptby, rules = None, None, None, None, None, None, None
     rulesPathRelative = sys.argv[1]
     htmlPathRelative = sys.argv[2] 
     htmlPathRelative.replace('"', '')
@@ -24,14 +25,12 @@ if __name__ == "__main__":
     resDir = os.path.join(rootDir, "res")
 
     rulesPath = findPath(resDir, rulesPathRelative)
-    print(rulesPath)
     if (rulesPath) == None:
         print("PDA file is not found")
     
     htmlPath = findPath(resDir, htmlPathRelative)
-    print(htmlPath)
     if htmlPath == None:
         print("HTML file is not found")
     
-    states, terminal, stackSymbol, startState, startStack, acceptingState, acceptby, rules = Rules.readrulesFile(rulesPath)
-    Token.startToken(htmlPath)
+    states, terminal, stackSymbol, startState, startStack, acceptby, rules = Rules.readrulesFile(rulesPath)
+    Token.startTokenize(htmlPath, terminal)
