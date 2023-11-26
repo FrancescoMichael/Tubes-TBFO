@@ -13,8 +13,8 @@ Dalam pembuatan suatu bahasa pemogramman, tentunya diperlukan suatu pemeriksaan 
 ## How To Run
 1. Masukkan [filePDA].py pada res/PDA/
 2. Masukkan [fileHTML].py pada res/test/
-3. pindah ke directory src/ dengan 'cd/src'
-4. pada Command Line Input, jalankan 'python main.py [filePDA].py "[fileHTML].py"'
+3. pindah ke directory src/ dengan cd/src
+4. pada Command Line Input, jalankan python main.py [filePDA].py "[fileHTML].py"
 
 ## Struktur Program
 TUBES-TBFO
