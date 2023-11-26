@@ -11,7 +11,7 @@ class bcolors:
 
 class Run:
     def __init__(self, tokenized, rules):
-        print(tokenized)
+        #print(tokenized)
         new_rule = []
         for Rule in rules:
             Rule1 = Rule[0].replace("eps", "")
@@ -26,14 +26,17 @@ class Run:
         self.states = [("_Qstart", "_Z0")]
         self.allowed_texts = ["GET", "POST", "text", "password", "email", "number", "checkbox", "submit", "reset",
                               "button"]
+        self.allowed_stack = ["_getpost", "_valinput", "_subresbut"]
 
     def is_prefix(self, str1, str2):
         if str1 == str2:
             return True
         if len(str2) > len(str1):
             return False
-        if str2 == "anyText" and str1 in self.allowed_texts:
-            return True
+        #print(str1, str2)
+        if len(str1) > 8:
+            if "_anyText" ==  str1[:8] and str2 in self.allowed_stack:
+                return True
         i = 0
         while i < len(str2):
             if str2[i] != str1[i]:
@@ -43,14 +46,19 @@ class Run:
             return True
         if str1[i] == '_':
             return True
-        print(str1, str2)
+        #print(str1, str2)
+        return False
+    
+    def isTheSame(self, str1, str2):
+        if str1 == "anyText" and str2 in self.allowed_texts:
+            return True
         return False
 
     def unify(self, state, char):
         res = []
         for rule in self.rules:
-            if state[0] == rule[0] and char == rule[1] and self.is_prefix(state[1], rule[2]):
-                print(state[0], state[1], rule[0], rule[1], rule[2])
+            if state[0] == rule[0] and (self.isTheSame(char, rule[1]) or char == rule[1]) and self.is_prefix(state[1], rule[2]):
+                #print(state[0], state[1], rule[0], rule[1], rule[2])
                 curstack = state[1]
                 for nxt in range(0, len(rule[3]), 1):
                     res.append((rule[3][nxt][0], curstack.replace(rule[2], rule[3][nxt][1], 1)))
@@ -73,9 +81,9 @@ class Run:
             stack_trace.extend(all_pos_states)
             self.states = all_pos_states
             if not self.states:
-                print(stack_trace)
-                print(self.pointer)
-                print(f'Unknown character in line {self.tokenized[self.pointer]}: {self.tokenized[self.pointer]}')
+                #print(stack_trace)
+                #print(self.pointer)
+                print(f'{bcolors.FAIL}Syntax Error!\nUnknown character: {self.tokenized[self.pointer]} {bcolors.ENDC}')
                 return
             self.pointer += 1
         #print(stack_trace)
