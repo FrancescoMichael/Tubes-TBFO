@@ -29,7 +29,7 @@ f.close()
 # for i in range(len(result)):
 #     print(result[i])
 
-dest = 'res.txt'
+dest = './res/PDA/res.txt'
 
 f = open(dest, 'w')
 i = 0
