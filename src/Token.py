@@ -93,8 +93,8 @@ def parseString(htmlAnyText):
 
 def createTrie():
     rawTerminal = ["<html", "<head", "<body", "<title", "<link", "<img", "<script", "<h1", "<h2", "<h3", "<h4", "<h5", "<h6", "<p", "<br", "<em", "<b", "<abbr", "<strong", "<small", "<hr", "<div", "<a", "<button", "<form", "<input", "<table", "<tr", 
-                "<td", "<th", "</html", "</head", "</body", "</title", "</link", "</img", "</script", "</h1", "</h2", "</h3", "</h4", "</h5", "</h6", "</p", "</br", "</em", "</b", "</abbr", "</strong", "</small", "</hr", "</div", "</a", "</button", "</form", "</input", "</table", "</tr", 
-                "</td", "</th", "<!--", "-->", "id", "class", "style", "src", "alt", "script", "rel", "href", "type", "action", "method", "GET", "POST", "text", "password", "email", "number", "checkbox", "submit", "reset", "button", "anyText", "A", "B", "C", "D", "E","F", "G", "H", "I","J",
+                "<td", "<th", "</html>", "</head>", "</body>", "</title>", "</link>", "</img>", "</script>", "</h1>", "</h2>", "</h3>", "</h4>", "</h5>", "</h6>", "</p>", "</br>", "</em>", "</b>", "</abbr>", "</strong>", "</small>", "</hr>", "</div>", "</a>", "</button>", "</form>", "</input>", "</table>", "</tr>", 
+                "</td>", "</th>", "<!--", "-->", "id", "class", "style", "src", "alt", "script", "rel", "href", "type", "action", "method", "GET", "POST", "text", "password", "email", "number", "checkbox", "submit", "reset", "button", "anyText", "A", "B", "C", "D", "E","F", "G", "H", "I","J",
                 "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a" "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ">", "1", "2", "3", "4", "5", "6", "7", 
                 "8", "9", "0", " ", "\n", "\t", "!", "-", "_", "@", "$", "#", "%", "^", "&", "*", "(", ")", "~", "'", "\"", ";", ":", "[", "]", "{", "}", "|", "+", "\\", "?", ",", ".", "="]
     for t in rawTerminal:
