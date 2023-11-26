@@ -1,17 +1,59 @@
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 class Run:
     def __init__(self, tokenized, rules):
+        print(tokenized)
+        new_rule = []
+        for Rule in rules:
+            Rule1 = Rule[0].replace("eps", "")
+            Rule2 = Rule[1].replace("eps", "")
+            Rule3 = Rule[2].replace("eps", "")
+            Rule4 = Rule[3][0][0].replace("eps", "")
+            Rule5 = Rule[3][0][1].replace("eps", "")
+            new_rule.append((Rule1, Rule2, Rule3, [(Rule4, Rule5)]))
         self.tokenized = tokenized
-        self.rules = rules
+        self.rules = new_rule
         self.pointer = 0
-        self.states = [("_Qstart", "Z0")]
+        self.states = [("_Qstart", "_Z0")]
+        self.allowed_texts = ["GET", "POST", "text", "password", "email", "number", "checkbox", "submit", "reset",
+                              "button"]
+
+    def is_prefix(self, str1, str2):
+        if str1 == str2:
+            return True
+        if len(str2) > len(str1):
+            return False
+        if str2 == "anyText" and str1 in self.allowed_texts:
+            return True
+        i = 0
+        while i < len(str2):
+            if str2[i] != str1[i]:
+                return False
+            i = i + 1
+        if i == len(str1):
+            return True
+        if str1[i] == '_':
+            return True
+        print(str1, str2)
+        return False
 
     def unify(self, state, char):
         res = []
         for rule in self.rules:
-            if state[0] == rule[0] and char == rule[1] and state[1] == rule[2]:
+            if state[0] == rule[0] and char == rule[1] and self.is_prefix(state[1], rule[2]):
+                print(state[0], state[1], rule[0], rule[1], rule[2])
                 curstack = state[1]
                 for nxt in range(0, len(rule[3]), 1):
-                    res.append((rule[3][nxt][0], curstack.replace(rule[2], rule[3][nxt][1])))
+                    res.append((rule[3][nxt][0], curstack.replace(rule[2], rule[3][nxt][1], 1)))
         return res
 
     def find_expected(self, end_state):
@@ -22,18 +64,26 @@ class Run:
         return res
 
     def fun(self):
+        stack_trace = []
+        #print("here")
         while self.pointer < len(self.tokenized):
             all_pos_states = []
             for state in self.states:
-                all_pos_states = self.unify(state, self.tokenized[self.pointer][0])
+                all_pos_states = self.unify(state, self.tokenized[self.pointer])
+            stack_trace.extend(all_pos_states)
             self.states = all_pos_states
             if not self.states:
-                print(f'Unknown character in line {self.tokenized[self.pointer][1]}: {self.tokenized[self.pointer][0]}')
+                print(stack_trace)
+                print(self.pointer)
+                print(f'Unknown character in line {self.tokenized[self.pointer]}: {self.tokenized[self.pointer]}')
                 return
             self.pointer += 1
+        #print(stack_trace)
+        #print("END: ")
+        #print(self.states[0])
         for endState in self.states:
-            if endState[1] == "eps":
-                print('Accepted!')
+            if not endState[1] :
+                print(f'{bcolors.OKGREEN}Accepted! {bcolors.ENDC}')
                 return
         expected_symbols = []
         for endState in self.states:

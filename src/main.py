@@ -3,6 +3,7 @@ import Rules
 import sys
 import Token
 import Trie
+import run
 
 # python3 src/main.py PDA/test.txt "test/inputAcc.html"
 
@@ -31,7 +32,9 @@ if __name__ == "__main__":
     htmlPath = findPath(resDir, htmlPathRelative)
     if htmlPath == None:
         print("HTML file is not found")
-    
+    print(rulesPath)
     states, terminal, stackSymbol, startState, startStack, acceptby, rules = Rules.readrulesFile(rulesPath)
     TokenList = Token.startTokenize(htmlPath)
-    print(TokenList)
+    runner = run.Run(TokenList, rules)
+    runner.fun()
+    
