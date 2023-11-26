@@ -34,9 +34,8 @@ class Run:
         if len(str2) > len(str1):
             return False
         #print(str1, str2)
-        if len(str1) > 8:
-            if "_anyText" ==  str1[:8] and str2 in self.allowed_stack:
-                return True
+        if "_anyText" ==  str2 and str1 in self.allowed_stack:
+            return True
         i = 0
         while i < len(str2):
             if str2[i] != str1[i]:
@@ -57,7 +56,8 @@ class Run:
     def unify(self, state, char):
         res = []
         for rule in self.rules:
-            if state[0] == rule[0] and (self.isTheSame(char, rule[1]) or char == rule[1]) and self.is_prefix(state[1], rule[2]):
+            #if rule[2] in self.allowed_stack and state[1][:8] == "_anyText" and char == 
+            if state[0] == rule[0] and char == rule[1] and self.is_prefix(state[1], rule[2]):
                 #print(state[0], state[1], rule[0], rule[1], rule[2])
                 curstack = state[1]
                 for nxt in range(0, len(rule[3]), 1):
