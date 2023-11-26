@@ -1,13 +1,13 @@
 _Qstart _Qopenhtml _Qhead _Qokhead _Qbody _Qokbody _Qclosehtml
-<html <!-- anyText --> > id class style <head <title <link <script </head> </title> rel href alt src <br <em <b <abbr <strong <small <hr </script> = “ <body <h1 <h2 <h3 <h4 <h5 <h6 <p <div <a <img <button <input <table </body> </a> </h1> </h2> </h3> </h4> </h5> </h6> </p> action method GET POST </form> type submit reset button </button> </div> <tr </table> <th <td </tr> </th> </td> text password email number checkbox </input> </em> </b> </abbr> </strong> </small> </html>
-_Z0 _comment _inscomment _openhtml _insopenhtml _anyText _head _inshead _title _institle _linkTrue _link _script _insscript _eq _quotation _okhead _body _img _imgTrue _insbody _a _insa _h1 _insh1 _h2 _insh2 _h3 _insh3 _h4 _insh4 _h5 _insh5 _h6 _insh6 _p _insp _form _getpost _insform _button _subresbut _insbutton _div _insdiv _table _instable _tr _instr _th _insth _td _instd _input _valinput _insinput _br br _em _insem _b _insb _abbr _insabbr _strong _insstrong _small _inssmall _hr hr _okbody eps
+<html <!-- anyText --> > id class style <head <title <link <script </head> </title> rel href alt src <br <em <b <abbr <strong <small <hr </script> = " <body <h1 <h2 <h3 <h4 <h5 <h6 <p <div <a <img <button <input <table </body> </a> </h1> </h2> </h3> </h4> </h5> </h6> </p> action method GET POST </form> type submit reset button </button> </div> <tr </table> <th <td </tr> </th> </td> text password email number checkbox </input> </em> </b> </abbr> </strong> </small> </html>
+_Z0 _comment _openhtml _insopenhtml _anyText _head _inshead _title _institle _linkTrue _link _script _insscript _eq _quotation _okhead _body _img _imgTrue _insbody _a _insa _h1 _insh1 _h2 _insh2 _h3 _insh3 _h4 _insh4 _h5 _insh5 _h6 _insh6 _p _insp _form _getpost _insform _button _subresbut _insbutton _div _insdiv _table _instable _tr _instr _th _insth _td _instd _input _valinput _insinput _br br _em _insem _b _insb _abbr _insabbr _strong _insstrong _small _inssmall _hr hr _okbody eps
 _Qstart
 _Z0
 E
 _Qstart <html _Z0 _Qopenhtml _openhtml
 _Qstart <!-- _Z0 _Qstart _comment_Z0
 _Qstart anyText _comment _Qstart _comment
-_Qstart --> _inscomment _Qstart eps
+_Qstart --> _comment _Qstart eps
 _Qopenhtml > _openhtml _Qopenhtml _insopenhtml
 _Qopenhtml id _openhtml _Qopenhtml _eq_quotation_anyText_quotation_openhtml
 _Qopenhtml class _openhtml _Qopenhtml _eq_quotation_anyText_quotation_openhtml
@@ -42,8 +42,8 @@ _Qhead href _link _Qhead _eq_quotation_anyText_quotation_link
 _Qhead class _linkTrue _Qhead _eq_quotation_anyText_quotation_linkTrue
 _Qhead id _linkTrue _Qhead _eq_quotation_anyText_quotation_linkTrue
 _Qhead style _linkTrue _Qhead _eq_quotation_anyText_quotation_linkTrue
-_Qhead alt _linkTrue _Qhead _eq_quotation_anyText_quotation_link
-_Qhead rel _link _Qhead _eq_quotation_anyText_quotation_linkTrue
+_Qhead href _linkTrue _Qhead _eq_quotation_anyText_quotation_linkTrue
+_Qhead rel _linkTrue _Qhead _eq_quotation_anyText_quotation_linkTrue
 _Qhead > _script _Qhead _insscript
 _Qhead class _script _Qhead _eq_quotation_anyText_quotation_script
 _Qhead id _script _Qhead _eq_quotation_anyText_quotation_script
@@ -60,7 +60,7 @@ _Qhead <small _insscript _Qhead _small_insscript
 _Qhead <hr _insscript _Qhead _hr_insform
 _Qhead </script> _insscript _Qhead eps
 _Qhead = _eq _Qhead eps
-_Qhead “ _quotation _Qhead eps
+_Qhead " _quotation _Qhead eps
 _Qhead anyText _comment _Qhead _comment
 _Qhead --> _comment _Qhead eps
 _Qhead anyText _anyText _Qhead eps
@@ -258,8 +258,8 @@ _Qbody > _form _Qbody _insform
 _Qbody class _form _Qbody _eq_quotation_anyText_quotation_form
 _Qbody id _form _Qbody _eq_quotation_anyText_quotation_form
 _Qbody style _form _Qbody _eq_quotation_anyText_quotation_form
-_Qbody action _form _Qbody _eq_quotation_getpost_quotation_form
-_Qbody method _form _Qbody _eq_quotation_anyText_quotation_form
+_Qbody action _form _Qbody _eq_quotation_anyText_quotation_form
+_Qbody method _form _Qbody _eq_quotation_getpost_quotation_form
 _Qbody GET _getpost _Qbody eps
 _Qbody POST _getpost _Qbody eps
 _Qbody anyText _insform _Qbody _insform
@@ -390,7 +390,7 @@ _Qbody <small _instd _Qbody _small_instd
 _Qbody <hr _instd _Qbody _hr_instd
 _Qbody anyText _instd _Qbody _instd
 _Qbody </td> _instd _Qbody eps
-_Qbody > _input _Qbody _insinput
+_Qbody > _input _Qbody eps
 _Qbody id _input _Qbody _eq_quotation_anyText_quotation_input
 _Qbody class _input _Qbody _eq_quotation_anyText_quotation_input
 _Qbody style _input _Qbody _eq_quotation_anyText_quotation_input
@@ -400,15 +400,8 @@ _Qbody password _valinput _Qbody eps
 _Qbody email _valinput _Qbody eps
 _Qbody number _valinput _Qbody eps
 _Qbody checkbox _valinput _Qbody eps
-_Qbody <!-- _insinput _Qbody _comment_insinput
-_Qbody <br _insinput _Qbody _br_insinput
-_Qbody <em _insinput _Qbody _em_insinput
-_Qbody <b _insinput _Qbody _b_insinput
-_Qbody <abbr _insinput _Qbody _abbr_insinput
-_Qbody <strong _insinput _Qbody _sinputong_insinput
-_Qbody <small _insinput _Qbody _small_insinput
-_Qbody <hr _insinput _Qbody _hr_insinput
-_Qbody anyText _insinput _Qbody _insinput
+_Qbody anyText _insdiv _Qbody _insdiv
+_Qbody <form _insbody _Qbody _form_insbody
 _Qbody </input> _insinput _Qbody eps
 _Qbody > _br _Qbody eps
 _Qbody id br _Qbody _eq_quotation_anyText_quotation_br
@@ -489,7 +482,7 @@ _Qbody id hr _Qbody _eq_quotation_anyText_quotation_hr
 _Qbody class _hr _Qbody _eq_quotation_anyText_quotation_hr
 _Qbody style _hr _Qbody _eq_quotation_anyText_quotation_hr
 _Qbody = _eq _Qbody eps
-_Qbody “ _quotation _Qbody eps
+_Qbody " _quotation _Qbody eps
 _Qbody anyText _comment _Qbody _comment
 _Qbody --> _comment _Qbody eps
 _Qbody anyText _anyText _Qbody eps
