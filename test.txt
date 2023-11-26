@@ -1,0 +1,5 @@
+(_Qstart, <html, _Z0) = {(_Qopenhtml, _openhtml)}
+(_Qstart, <!--, _Z0) = {(_Qstart, _comment_Z0)}
+(_Qstart, anyText, _comment) = {(_Qstart, _comment)}
+(_Qstart, -->, _inscomment) = {(_Qstart, eps)}
+.

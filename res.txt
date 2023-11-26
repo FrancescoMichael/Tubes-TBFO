@@ -1,5 +1,11 @@
+_Qstart _Qopenhtml _Qhead _Qokhead _Qbody _Qokbody _Qclosehtml
+<html <!-- anyText --> > id class style <head <title <link <script </head> </title> rel href alt src <br <em <b <abbr <strong <small <hr </script> = “ <body <h1 <h2 <h3 <h4 <h5 <h6 <p <div <a <img <button <input <table </body> </a> </h1> </h2> </h3> </h4> </h5> </h6> </p> action method GET POST </form> type submit reset button </button> </div> <tr </table> <th <td </tr> </th> </td> text password email number checkbox </input> </em> </b> </abbr> </strong> </small> </html>
+_Z0 _comment _inscomment _openhtml _insopenhtml _anyText _head _inshead _title _institle _linkTrue _link _script _insscript _eq _quotation _okhead _body _img _imgTrue _insbody _a _insa _h1 _insh1 _h2 _insh2 _h3 _insh3 _h4 _insh4 _h5 _insh5 _h6 _insh6 _p _insp _form _getpost _insform _button _subresbut _insbutton _div _insdiv _table _instable _tr _instr _th _insth _td _instd _input _valinput _insinput _br br _em _insem _b _insb _abbr _insabbr _strong _insstrong _small _inssmall _hr hr _okbody eps
+_Qstart
+_Z0
+E
 _Qstart <html _Z0 _Qopenhtml _openhtml
-_Qstart <!--  _Z0 _Qstart _comment_Z0
+_Qstart <!-- _Z0 _Qstart _comment_Z0
 _Qstart anyText _comment _Qstart _comment
 _Qstart --> _inscomment _Qstart eps
 _Qopenhtml > _openhtml _Qopenhtml _insopenhtml
