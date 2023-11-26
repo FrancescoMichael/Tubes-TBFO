@@ -1,7 +1,7 @@
-import Rules
+import Trie
 
 CT = ""
-# Trie = 
+anyText = "ANYTEXT"
 
 def readhtmlFile(path):
     try:
@@ -16,9 +16,29 @@ def readhtmlFile(path):
     except Exception as e:
         print(f"Unexpected error while reading HTML file - {e}")
     
-# def createTrie(term):
+def parseString(string : str):
+    htmlUniformQuote = string.replace('”', '"')
+    htmlAnyText = htmlUniformQuote.split('"')
+    for i in range(len(htmlAnyText)):
+        if (i & 1):
+            htmlAnyText[i] = anyText
 
+    htmlSplitted = []
+    htmlParsed = []
+
+    for i in range(len(htmlAnyText)):
+        print(htmlAnyText[i])
+        print("\n")
     
-def startToken(path):
+    for i in range(len(htmlAnyText)):
+        htmlAnyText[i].replace('\n', ' ')
+        htmlAnyText[i].replace('\t', ' ')
+        htmlSplitted.append(None)
+        htmlSplitted[i] = htmlAnyText[i].split()
+        for j in range(len(htmlSplitted[i])):
+            htmlParsed.append(htmlSplitted[i][j])
+    return htmlParsed
+
+def startTokenize(path, Terminal):
     htmlString = readhtmlFile(path)
-    # createTrie(Rules.terminal)
+    htmlParsed = parseString(htmlString)

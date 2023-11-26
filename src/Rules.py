@@ -1,13 +1,12 @@
 def readrulesFile(path):
     try:
         with open(path, "rt") as file:
-            States, Terminal, StackSymbol, StartState, StartStack, AcceptingState, Acceptby, Rules = "", "", "", "", "", "", "", ""
+            States, Terminal, StackSymbol, StartState, StartStack, Acceptby, Rules = "", "", "", "", "", "", ""
             States = list(file.readline().split())
             Terminal = list(file.readline().split())
             StackSymbol = list(file.readline().split())
             StartState = file.readline()
             StartStack = file.readline()
-            AcceptingState = list(file.readline().split())
             Acceptby = file.readline()
             Rules = []
             line = file.readline()
@@ -23,6 +22,6 @@ def readrulesFile(path):
                 del rule
                 line = file.readline()
         file.close()
-        return States, Terminal, StackSymbol, StartState, StartStack, AcceptingState, Acceptby, Rules
+        return States, Terminal, StackSymbol, StartState, StartStack, Acceptby, Rules
     except Exception as e:
         print(f"Unexpected error while reading PDA file - {e}")
