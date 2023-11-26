@@ -25,6 +25,14 @@ def readhtmlFile(path):
 
 def convertAnyText(string : str):
     i = 0
+    while (i < len(string)):
+        if (string[i] == '>'):
+            string = string[:i+1] + ' ' + string[i+1:]
+        if (i < len(string)):
+            i += 1
+        else:
+            break
+    i = 0
     while i < len(string):
         if (string[i] == '<'):
             i += 1
@@ -35,7 +43,7 @@ def convertAnyText(string : str):
                 if (j < len(string)):
                     length = j - i - 7 
                     string = replaceAtIndex(string, i+3, j, anyText)
-                    i = j-1
+                    i = j+3
                     i -= length
             else:
                 while (j < len(string) and string[j] != '>'):
@@ -122,5 +130,4 @@ def startTokenize(path):
     htmlParsed = parseString(htmlAnyText)
     createTrie()
     tokenList = parseToken(htmlParsed)
-    print(tokenList)
     return tokenList
